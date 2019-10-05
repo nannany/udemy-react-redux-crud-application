@@ -5,14 +5,15 @@ import { Provider } from "react-redux";
 import "./index.css";
 
 import reducer from "./reducers";
-import App from "./componets/App";
-import registerServiceWorker from "./registerServiceWorker";
+import EventsIndex from "./components/events_index";
+import * as serviceWorker from "./serviceWorker";
 
 const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />, document.getElementById("root"));
-  </Provider>
+    <EventsIndex />
+  </Provider>,
+  document.getElementById("root")
 );
-registerServiceWorker();
+serviceWorker.register();
